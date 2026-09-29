@@ -7,7 +7,7 @@
 
 ### 1. 특성과 학습
 
-- **특성(Feature)**: 데이터를 표현하는 성질 → 부리 길이, 부리 무게 2개
+- **특성(Feature)**: 데이터를 표현하는 성질 → 부리 폭, 부리 길이 2개
 - **학습(fit)**: 데이터에서 규칙을 찾는 과정 → 사이킷런의 `fit()`
 - **모델(Model)**: 알고리즘이 구현된 객체 → 이번엔 `knn` 변수
 
@@ -59,15 +59,12 @@ print(accuracy)
 
 ![실습 화면](./assets/week2-01-colab-screen.png)
 
-부리 길이/무게 49마리 데이터를 **0\~34번(35마리)** 과 **35\~48번(14마리)** 두 그룹으로 나눠봤습니다.
+부리 폭/길이 49마리 데이터를 **0\~34번(35마리)** 과 **35\~48번(14마리)** 두 그룹으로 나눠봤습니다.
 
--특성1. **beak_height** : 부리의 폭
-
--특성2. **beak_length** : 부리의 길이
-
--**A섬 핀치** - 부리의 높이가 작고 길다.
-
--**B섬 핀치** - 부리의 높이가 크고 짧다.
+- 특성1. **beak_height** : 부리의 폭
+- 특성2. **beak_length** : 부리의 길이
+- **A섬 핀치** - 부리의 폭이 작고 길다.
+- **B섬 핀치** - 부리의 폭이 크고 짧다.
 
 ```python
 import numpy as np
@@ -83,8 +80,8 @@ test_target  = beak_target[35:]
 
 plt.scatter(train_input[:, 0], train_input[:, 1], c="blue")     # 훈련
 plt.scatter(test_input[:, 0],  test_input[:, 1],  c="orange")   # 테스트
-plt.xlabel("length")
-plt.ylabel("weight")
+plt.xlabel("beak_length")
+plt.ylabel("beak_height")
 plt.show()
 ```
 
